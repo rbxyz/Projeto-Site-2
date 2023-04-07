@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário de dados de seres não identificados</title>
+	<link rel="stylesheet" href="site_p1.css">
+</head>
+<body>
+	<h1>Insira os dados do ser mítico (ou não):</h1>
+	<form>
+		<h3>
+		<label for="nome">Nome:</label>
+		<!-- required torna necessario para o envio-->
+		<input type="text" id="nome" name="nome" required><br><br>
+		
+		</h3>
+		<h3>
+		<label for="especie">Espécie:</label>	  
+		<!-- CAIXA SUSPENSA -->
+		<select onchange="showHideInput(this)" id="opcao_especie">
+			<option value="opcao1_especie">Humano</option>
+			<option value="opcao2_especie">Extra-terrestre</option>
+			<option value="opcao3_especie">Megazord</option>
+			<option value="outros_especie">Outros...</option>
+		  </select>		  
+		  <div id="inputDiv" style="display:none;">
+			<input type="text" id="inputField">
+		  </div>		  
+		  <script>
+			function showHideInput(selectElement) {
+			  var inputDiv = document.getElementById("inputDiv");
+			  var inputField = document.getElementById("inputField");
+			  
+			  if (selectElement.value == "outros") {
+				inputDiv.style.display = "block";
+				inputField.required = true;
+			  } else {
+				inputDiv.style.display = "none";
+				inputField.required = false;
+			  }
+			}
+		  </script>
+		</h3>
+		<h3>
+		<label for="Classe">Classe:</label>
+		<select onchange="showHideInput(this)" id="opcao_class">
+			<option value="opcao1_class">BodyBuilder</option>
+			<option value="opcao2_class">Chad</option>
+			<option value="opcao3_class">Giga</option>
+			<option value="opcao3_class">Alpha</option>
+			<option value="opcao3_class">Sigma</option>
+			<option value="outros_class">Outros...</option>
+		  </select>	  
+		  <div id="inputDiv" style="display:none;">
+			<input type="text" id="inputField">
+		  </div>
+		  <script>
+			function showHideInput(selectElement) {
+			  var inputDiv = document.getElementById("inputDiv");
+			  var inputField = document.getElementById("inputField");
+			  
+			  if (selectElement.value == "outros") {
+				inputDiv.style.display = "block";
+				inputField.required = true;
+			  } else {
+				inputDiv.style.display = "none";
+				inputField.required = false;
+			  }
+			}
+		  </script>
+		</h3>
+		
+		<button type="submit" ><a href="site2.html">Enviar< </a></button>
+		<!-- <button type="submit" onclick="redirecionar()"><a href="site2.html">Enviar</a></button> -->
+		
+		<!-- para evniar para paginas especificas-->
+	<!-- <script>
+			function redirecionar() {
+  			var opcao_especie = document.getElementById("opcao_especie").value;
+ 			 var opcao_class = document.getElementById("opcao_class").value;
+  
+ 			 if (opcao_especie == "opcao1_especie" && opcao_class === "opcao1_class") {
+ 			   window.location.href = "site2.html";
+ 			 } else if (opcao_especie == "opcao2_especie" && opcao_class === "opcao1_class") {
+ 			   window.location.href = "pagina2.html";
+ 			 } else if (opcao_especie == "opcao3_especie" && opcao_class === "opcao1_class") {
+ 			   window.location.href = "pagina3.html";
+ 			 }
+ 			 else if (opcao_especie == "opcao1_especie" && opcao_class === "opcao2_class") {
+  			  window.location.href = "pagina4.html";
+ 			 } else if (opcao_especie == "opcao2_especie" && opcao_class === "opcao2_class") {
+ 			   window.location.href = "pagina5.html";
+ 			 } else if (opcao_especie == "opcao3_especie" && opcao_class === "opcao2_class") {
+ 			   window.location.href = "pagina6.html";
+ 			 }
+			  else if (opcao_especie == "opcao1_especie" && opcao_class === "opcao3_class") {
+  			  window.location.href = "pagina7.html";
+ 			 } else if (opcao_especie == "opcao2_especie" && opcao_class === "opcao3_class") {
+ 			   window.location.href = "pagina8.html";
+ 			 } else if (opcao_especie == "opcao3_especie" && opcao_class === "opcao3_class") {
+ 			   window.location.href = "pagina9.html";
+ 			 } else {
+ 			   // lidar com a situação em que nenhuma das condições é verdadeira
+  			  window.alert("Opção inválida");
+ 			 }
+			}
+
+		  </script> -->		
+	</form>
+	
+</body>
+</html>
